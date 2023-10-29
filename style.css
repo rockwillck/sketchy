@@ -1,0 +1,116 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	overflow-y: hidden;
+}
+
+canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	width: 100vmin;
+	height: 100vmin;
+}
+
+#canvas2 {
+	z-index: 3;
+}
+
+#preview {
+	z-index: 6;
+	background-color: rgb(255, 255, 255);
+	opacity: 0;
+}
+
+.ui {
+	background-color: rgba(0, 0, 0, 0.707);
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+	resize: both;
+	overflow: scroll;
+	left: 0;
+	top: 0;
+	position: absolute;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 10;
+	color: white;
+	width: 300px;
+	min-height: min-content;
+	box-sizing: border-box;
+	min-width: 300px;
+}
+
+.sliders, .buttons, .imgInput {
+	background-color: black;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.707);
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	background-color: rgba(0, 0, 0, 0.399);
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	border: solid;
+	transition: 0.2s;
+	margin: 10px;
+}
+button:hover {
+	background-color: white;
+	color: black;
+}
+
+input[type="range"] {
+	width: 100%;
+	height: 10px; /* Adjust the height as needed */
+	background: #ffffff2f; /* Track background color */
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	/* overflow: auto; */
+}
+
+/* Styling for the thumb */
+input[type="range"]::-webkit-slider-thumb {
+	width: 10px; /* Square thumb size */
+	height: 10px; /* Square thumb size */
+	background-color: white;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+
+video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	width: 50vmin;
+	z-index: 100;
+}
+.closeVideo {
+	position: absolute;
+	top: 30%;
+	left: 70%;
+	translate: -50% -50%;
+	z-index: 101;
+}
+
+#output {
+	opacity: 0;
+	transition: 0.2s;
+}

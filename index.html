@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello, world!</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="">
+</head>
+<body>
+	<div class="interface">
+		<div class="canvases">
+			<canvas id="canvas"></canvas>
+			<canvas id="preview"></canvas>
+		</div>
+		<div class="ui" id="ui">
+			<div class="imgInput">
+				<input type='file' accept="image/png, image/gif, image/jpeg" onchange="imageInput(this);" />
+			</div>
+			<div class="sliders">
+				<label for="floor">Baseline</label>
+				<input type="range" min="0" max="1000" oninput="floor=this.value/1000" id="floor">
+				<label for="red">Red Weight</label>
+				<input type="range" min="0" max="100" oninput="rWeight=this.value/100" id="red">
+				<label for="green">Green Weight</label>
+				<input type="range" min="0" max="100" oninput="gWeight=this.value/100" id="green">
+				<label for="blue">Blue Weight</label>
+				<input type="range" min="0" max="100" oninput="bWeight=this.value/100" id="blue">
+			</div>
+			<div class="buttons">
+				<button onclick="clearInterval(setId); ctx.clearRect(0, 0, canvas.width, canvas.height); playback(); document.getElementById('preview').style.opacity = 1; document.getElementById('export').style.opacity = 1">Run</button>
+				<button onclick="mediaRecorder.stop(); document.getElementById('output').style.opacity = 1;" id="export" style="opacity: 0;">Export Video</button>
+			</div>
+		</div>
+	</div>
+	<div id="output">
+		<button class="closeVideo" onclick="document.getElementById('output').style.opacity = 0">X</button>
+		<video autoplay controls></video>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
